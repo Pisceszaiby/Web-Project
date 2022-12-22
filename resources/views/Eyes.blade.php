@@ -10,7 +10,7 @@
     <main>
 {{--
       Best Sellers --}}
-            <section class="section-a">
+           <!-- <section class="section-a">
        <x-Navbar />
             <h2>Best Sellers</h2>
             <div class="container-fluid">
@@ -23,17 +23,16 @@
 
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- Mascaras -->
         <section class="section-b">
             <h2>Mascaras</h2>
             <div class="container-fluid">
 
                 <div class="row ">
-                    <x-Card/>
-                    <x-Card/>
-                    <x-Card/>
-                    <x-Card/>
+                @foreach ($mascaras as $mascara)
+                    <x-Card :picPath="$Mascara['picPath']" :picPath2="$Mascara['picPath2']"  :productTitle="$Mascara['Title']" :productCategory="$Mascara['SubCategory']" :productPrice="$Mascara['price']" :discounted="$Mascara['discountedPrice']" />
+                    @endforeach
 
                 </div>
             </div>
@@ -44,11 +43,9 @@
             <div class="container-fluid">
 
                 <div class="row ">
-                    <x-Card/>
-                    <x-Card/>
-                    <x-Card/>
-                    <x-Card/>
-
+                @foreach ($liners as $liner)
+                    <x-Card :picPath="$liner['picPath']" :picPath2="$liner['picPath2']"  :productTitle="$liner['Title']" :productCategory="$liner['SubCategory']" :productPrice="$liner['price']" :discounted="$liner['discountedPrice']" />
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -58,10 +55,9 @@
             <div class="container-fluid">
 
                 <div class="row ">
-                    <x-Card/>
-                    <x-Card/>
-                    <x-Card/>
-                    <x-Card/>
+                @foreach ($eyeshadows as $eyeshadow)
+                    <x-Card :picPath="$eyeshadow['picPath']" :picPath2="$eyeshadow['picPath2']"  :productTitle="$eyeshadow['Title']" :productCategory="$eyeshadow['SubCategory']" :productPrice="$eyeshadow['price']" :discounted="$eyeshadow['discountedPrice']" />
+                    @endforeach
 
                 </div>
             </div>

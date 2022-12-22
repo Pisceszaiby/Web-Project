@@ -50,4 +50,45 @@ class MakeUpProduct extends Controller
         $data = compact('bestSelling', 'lipSets', 'lipPencils', 'lipTints', 'lipSticks');
         return view("Lips")->with($data);
     }
+
+public function mascara()
+    {
+        $products = Product::where('subCategory', 'MASCARA')->get();
+        $products = $products->toArray();
+        $data = compact('products');
+        return view("MASCARA")->with($data);
+    }
+
+    public function liner()
+    {
+        $products = Product::where('subCategory', 'LINER')->get();
+        $products = $products->toArray();
+        $data = compact('products');
+        return view("LINER")->with($data);
+    }
+
+    public function eyeshadow()
+    {
+        $products = Product::where('subCategory', 'EYESHADOW')->get();
+        $products = $products->toArray();
+        $data = compact('products');
+        return view("EYESHADOW")->with($data);
+    }
+
+    
+
+
+    public function eyes()
+    {
+        $bestSelling = Product::where('Category', 'EYES')->orderBy("Quantity")->get();
+        $bestSelling = $bestSelling->toArray();
+        $Mascara = Product::where('subCategory', 'MASCARA')->get();
+        $Mascara = $Mascara->toArray();
+        $liner = Product::where('subCategory', 'LINER')->get();
+        $liner = $liner->toArray();
+        $Eyeshadow = Product::where('subCategory', 'EYESHADOW')->get();
+        $Eyeshadow = $Eyeshadow->toArray();
+        $data = compact('bestSelling', 'EYES', 'MASCARA', 'LINER');
+        return view("eyes")->with($data);
+    }
 }
