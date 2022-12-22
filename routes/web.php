@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MakeUpProduct;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -84,7 +85,7 @@ Route::get('/lips', [MakeUpProduct::class, 'lips']);
 Route::get('/lipSticks', [MakeUpProduct::class, 'lipSticks']);
 Route::get('/lipPencils', [MakeUpProduct::class, 'lipPencils']);
 Route::get('/lipTints', [MakeUpProduct::class, 'lipTints']);
-
+Route::post('/AddProduct', [ProductController::class, 'store']);
 
 Route::get('/login', function () {
     return view('Login');
