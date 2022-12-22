@@ -1,0 +1,362 @@
+:root {
+    --golden: #978d07;
+    --navyblue: #02061c;
+    --white: #f7f7f7;
+    --brightGolden: #c5b204;
+}
+
+@font-face {
+    font-family: gothic;
+    src: url("/font/Gothic.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: gothic;
+}
+
+/* BASIC ELEMENTS */
+hr {
+    height: 3px;
+    color: var(--brightGolden);
+    background-color: var(--brightGolden);
+    margin: 15px 0px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--golden);
+}
+
+a:hover {
+    color: var(--golden);
+}
+
+/*HEADINGS */
+
+.section-a h2 {
+    background: -webkit-linear-gradient(-45deg, #f7e991, #978d07, #e2e1dd, #c5b204);
+    animation: gradient 10s ease infinite;
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 20px;
+    font-size: 3.5rem;
+    letter-spacing: 0.25em;
+    line-height: 1.5;
+    font-weight: 900;
+    text-align: center;
+}
+
+.section-b h2 {
+    margin: 20px;
+    color: var(--white);
+    background-color: #02061ca8;
+    font-size: 3.5rem;
+    letter-spacing: 0.25em;
+    line-height: 1.5;
+    font-weight: 900;
+    text-align: center;
+}
+
+/* Buttons */
+
+.codeBtn {
+    background-color: var(--navyblue);
+    color: var(--white);
+    border: 2px solid var(--navyblue);
+    margin-top: 5px;
+}
+
+
+a .btn:hover {
+    background-color: var(--white);
+}
+
+.product-add {
+    background-color: var(--navyblue);
+    color: var(--golden);
+    border: 2px solid var(--navyblue);
+    width: 70%;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    display: block;
+    margin: 10px auto;
+}
+
+.product-add:hover {
+    background-color: var(--navyblue);
+    color: var(--golden);
+    border: 2px solid var(--golden);
+    text-align: center;
+    /* width: 70%; */
+}
+
+.btn-primary:hover {
+    --bs-btn-hover-color: var(--brightGolden);
+    --bs-btn-hover-bg: var(--navyblue);
+    --bs-btn-hover-border-color: var(--navyblue);
+}
+
+.homepage-btn {
+    width: 70%;
+    margin: 20px;
+}
+
+/* Card */
+
+.price {
+
+    margin: 5px;
+}
+
+.card-body {
+    text-align: center;
+    color: var(--golden);
+    background-color: var(--white);
+    border-radius: 0 0 35px 35px;
+
+}
+
+.card-img-top {
+    border-radius: 35px 35px 0px 0px;
+}
+
+.card-img-top img {
+    border-radius: 35px;
+}
+
+.initial-price {
+    text-decoration: line-through;
+}
+
+.card {
+    margin: 10px;
+    border: none;
+    box-shadow: 0px 2px 4px var(--brightGolden);
+    border-radius: 35px;
+}
+
+/* KEY FRAMES */
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+/* SECTIONS */
+.section-a {
+    padding: 40px;
+    background-color: var(--navyblue)
+}
+
+.section-b {
+    padding: 40px;
+    background-image: url("https://www.dior.com/couture/var/dior/storage/images/horizon/beauty/beauty-home-components/the-dior-icons/jadore-y0715201/36483537-2-eng-GB/jadore-y0715201_1440_1200.jpg");
+    animation: gradient 120s ease-out infinite;
+}
+
+/* LOGO */
+.logo-zash {
+    text-align: center;
+    margin: 10px auto;
+    display: block;
+}
+
+/* carousal */
+#testimonials {
+    text-align: center;
+    color: var(--white);
+    line-height: 1.5px;
+}
+
+.carousel-item {
+    padding: 7% 15%;
+}
+
+/*
+PRODUCT PAGE */
+.prod-quantity {
+    color: var(--white);
+    text-decoration: none;
+    font-size: xx-large;
+    margin: 25px 0;
+}
+
+.quantity {
+    color: var(--white);
+    text-decoration: none;
+    font-size: xx-large;
+    margin: 5px 40%;
+}
+
+.prod-quantity:hover {
+    color: var(--brightGolden);
+
+}
+
+.test-img {
+    width: 100%;
+    border-radius: 100%;
+    /* margin: 10px 10px; */
+}
+
+/* FORMS */
+
+.login-form h1 {
+    color: var(--navyblue);
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.login-form {
+    vertical-align: middle;
+}
+
+.form-control {
+    background-color: var(--white);
+    color: var(--navyblue);
+    border-bottom: 2px var(--white) solid;
+    border-top: none;
+    border-left: none;
+    /* text-align: center; */
+    border-right: none;
+    width: 70%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+
+}
+
+/*
+TABLE */
+
+td {
+    background-color: var(--navyblue);
+}
+
+.table-row {
+    text-align: center;
+    vertical-align: middle;
+    color: var(--golden);
+    /* color: #e5dfe8; */
+    /* font-size: larger; */
+    /* background-color: #7e597b; */
+}
+
+.table>:not(caption)>*>* {
+    background-color: var(--white);
+    border-color: var(--white);
+}
+
+.table-row a {
+    color: var(--golden);
+    text-decoration: none;
+}
+
+/* tr {
+    background-color: #7e597b;
+    color: white;
+    font-size: larger;
+    text-align: center;
+} */
+/* IMAGES */
+.image-signin {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+Scroll Bar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: var(--navyblue);
+    ;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: var(--golden);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--brightGolden);
+    ;
+}
+
+/*
+NAV BAR */
+.navbar {
+    padding: 0 0 0.5rem 0;
+    color: var(--golden);
+
+}
+
+.nav-item {
+    padding: 0 10px;
+    font-size: 18px;
+    color: var(--golden);
+}
+
+.navbar-brand {
+    text-align: center;
+    background: -webkit-linear-gradient(-45deg, #f7e991, #978d07, #e2e1dd, #c5b204);
+    animation: gradient 10s ease infinite;
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bolder;
+    letter-spacing: 0.25em;
+    font-size: xx-large;
+    margin: auto;
+
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-weight: light;
+    color: var(--golden);
+}
+
+.blink-class {
+    color: var(--golden);
+    font-weight: bolder;
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}

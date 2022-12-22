@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\MakeUpProduct;
-use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -129,8 +128,3 @@ Route::get('/serums', function () {
 Route::get('/skincare', function () {
     return view('Skincare');
 });
-
-
-//
-
-Route::post('/AddProduct', [ProductController::class, 'store']);
