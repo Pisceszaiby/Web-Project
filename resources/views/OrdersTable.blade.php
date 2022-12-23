@@ -75,4 +75,5 @@
 
 
     </main>
+        <x-Foot />
     @endsection

@@ -11,7 +11,7 @@
         {{-- <!-- Highlighters  --}}
             <section class="section-a">
        <x-Navbar />
-            <h2>Highlighters</h2>
+            <h2>HIGHLIGHTERS</h2>
             <div class="container-fluid">
 
                 <div class="row ">
@@ -27,4 +27,5 @@
 
 
     </main>
+        <x-Foot />
   @endsection

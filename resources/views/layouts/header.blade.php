@@ -26,4 +26,7 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <!-- Link of External Style Sheet -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+      <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/c604ef251a.js" crossorigin="anonymous"></script>
+
 </head>

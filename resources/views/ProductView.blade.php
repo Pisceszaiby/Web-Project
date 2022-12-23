@@ -7,26 +7,26 @@
 <body class="section-a">
 
     <main>
+        <x-NavBar></x-NavBar>
 
         <!-- Product View -->
         <section id="testimonials">
             <div class="container-fluid">
-                <x-NavBar></x-NavBar>
                 <div class="row">
                     <div id="testimnonials-carousel" class="col-lg-6 carousel slide" data-ride="false">
                         <div class="carousel-inner">
                             <div class="carousel-item active container-fluid">
 
                                 <img class="test-img"
-                                    src="https://cdn.shopify.com/s/files/1/1338/0845/products/Winter-Nites-Composite_800x1200.jpg?v=1670461160"
-                                    alt="dog-profile">
+                                    src="{{$product[0]["picPath"]}}"
+                                    alt="pic1">
 
                             </div>
                             <div class="carousel-item container-fluid">
 
                                 <img class="test-img"
-                                    src="https://cdn.shopify.com/s/files/1/1338/0845/products/14_Single_Stix_Winter_Nites_262_800x1200.jpg?v=1670461150"
-                                    alt="lady-profile">
+                                src="{{$product[0]["picPath2"]}}"
+                                alt="pic2">
 
                             </div>
 
@@ -43,10 +43,10 @@
                     <div class="col-lg-6">
                         <br>
                         <br>
-                        <h2>Product Title</h2>
-                        <h4>Product Type</h4>
+                        <h5>{{$product[0]["Title"]}}</h5>
+                        <h6>{{$product[0]["Category"]}}</h6>
                         <br>
-                        <h2>Rs Price PKR</h2>
+                        <h5>${{$product[0]["price"]}}</h5>
 
                         <hr>
                         <a class="prod-quantity" href=""><span>-</span></a>
@@ -54,19 +54,11 @@
                         <span class="quantity">1</span>
                         <a class="prod-quantity" href=""><span>+</span></a>
                         <hr>
-                        <a href=" " class="product-add btn">Add to Cart</a>
+                        <a href=" " class="product-add btn addCart ">Add to Cart</a>
                         <br>
-                        <h3 align="left">Product Description</h3>
+                        <h5 class="desc" align="left">Product Description</h5>
                         <h6 align="left">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, doloremque officia. Iste
-                            temporibus voluptas tempora quos beatae inventore modi nobis unde est ab asperiores,
-                            suscipit minus ipsum quia eos dolorum quis! Quam debitis explicabo doloribus vitae
-                            asperiores quaerat, eum quidem, soluta, placeat fugiat quibusdam ipsam at magnam eveniet
-                            ullam odio.temporibus voluptas tempora quos beatae inventore modi nobis unde est ab
-                            asperiores,
-                            suscipit minus ipsum quia eos dolorum quis! Quam debitis explicabo doloribus vitae
-                            asperiores quaerat, eum quidem, soluta, placeat fugiat quibusdam ipsam at magnam eveniet
-                            ullam odio.
+                            {{$product[0]["Description"]}}
                         </h6>
 
                     </div>
@@ -84,4 +76,5 @@
 
 
     </main>
+        <x-Foot />
     @endsection

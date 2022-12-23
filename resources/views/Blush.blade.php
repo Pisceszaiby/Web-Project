@@ -8,7 +8,7 @@
         {{-- <!-- Blush --}}
              <section class="section-a">
 <x-Navbar />
-            <h2>Blush</h2>
+            <h2>BLUSH</h2>
             <div class="container-fluid">
                 <div class="row ">
 <x-Card
@@ -21,4 +21,6 @@ discounted="Product Discount"  />
             </div>
         </section>
     </main>
+        <x-Foot />
+
     @endsection

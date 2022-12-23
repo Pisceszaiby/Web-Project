@@ -11,9 +11,9 @@
     @section('main-section')
 
     <div class="wrapper">
-        <h2>Check Out</h2>
+        <h2>CHECK OUT</h2>
         <form action="" method="post">
-            <h4>Account</h4>
+            <h4>ACCOUNT</h4>
             <div class="input_group">
 
                 <div class="input_box">

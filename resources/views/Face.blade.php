@@ -12,7 +12,7 @@
         {{-- <!-- Best Sellers --}}
             <section class="section-a">
        <x-Navbar />
-            <h2>Best Sellers</h2>
+            <h2>BEST SELLERS</h2>
             <div class="container-fluid">
 
                 <div class="row ">
@@ -26,7 +26,7 @@
         </section>
         <!-- Highlighters -->
         <section class="section-b">
-            <h2>Highlighters</h2>
+            <h2>HIGHLIGHTERS</h2>
             <div class="container-fluid">
 
                 <div class="row ">
@@ -41,7 +41,7 @@
         {{-- <!-- Foundation  --}}
             <section class="section-a">
        <x-Navbar />
-            <h2>Foundation</h2>
+            <h2>FOUNDATION</h2>
             <div class="container-fluid">
 
                 <div class="row ">
@@ -55,7 +55,7 @@
         </section>
         <!-- Concealer -->
         <section class="section-b">
-            <h2>Concealer</h2>
+            <h2>CONCEALER</h2>
             <div class="container-fluid">
 
                 <div class="row ">
@@ -69,7 +69,7 @@
         </section>
         {{-- <!-- Blush --}}<section class="section-a">
        <x-Navbar />
-            <h2>Blush</h2>
+            <h2>BLUSH</h2>
             <div class="container-fluid">
 
                 <div class="row ">
@@ -83,7 +83,7 @@
         </section>
         <!-- Brushes -->
         <section class="section-b">
-            <h2>Brushes</h2>
+            <h2>BRUSHES</h2>
             <div class="container-fluid">
 
                 <div class="row ">
@@ -98,4 +98,5 @@
 
 
     </main>
+        <x-Foot />
     @endsection

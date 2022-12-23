@@ -1,24 +1,4 @@
-{{-- <footer>
 
-  <ul>
-
-    <li>
-        <a href="#">Hello 1</a>
-    </li>
-    <li>
-        <a href="#">Hello2</a>
-    </li>
-    <li>
-        <a href="#">Hello3</a>
-    </li>
-    <li>
-        <a href="#">Hello4</a>
-    </li>
-    <li>
-        <a href="#">Hello5</a>
-    </li>
-  </ul>
-</footer> --}}
 </section>
 <!-- Bootstrap JavaScript Libraries -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

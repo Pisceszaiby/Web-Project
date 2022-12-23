@@ -18,4 +18,5 @@
         </div>
         </div> </div>
     </main>
+    <x-Foot />
     @endsection

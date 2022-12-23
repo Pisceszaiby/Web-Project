@@ -3,7 +3,7 @@
 use App\Http\Controllers\MakeUpProduct;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Product;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,12 +80,12 @@ Route::get('/highlighter', function () {
 });
 
 
-Route::get('/lipSets', [MakeUpProduct::class, 'lipset']);
+Route::get('/lipSets', [MakeUpProduct::class, 'lipSets']);
 Route::get('/lips', [MakeUpProduct::class, 'lips']);
 Route::get('/lipSticks', [MakeUpProduct::class, 'lipSticks']);
 Route::get('/lipPencils', [MakeUpProduct::class, 'lipPencils']);
 Route::get('/lipTints', [MakeUpProduct::class, 'lipTints']);
-Route::post('/AddProduct', [ProductController::class, 'store']);
+
 
 Route::get('/login', function () {
     return view('Login');
@@ -103,7 +103,7 @@ Route::get('/oils', function () {
     return view('Oils');
 });
 
-
+Route::post('/AddProduct', [ProductController::class, 'store']);
 
 Route::get('/orders', function () {
     return view('OrdersTable');
@@ -114,9 +114,13 @@ Route::get('/privacyPolicy', function () {
 Route::get('/productTable', function () {
     return view('ProductTable');
 });
-Route::get('/productView', function () {
-    return view('ProductView');
+Route::get('/productInfo/{id}', function ($id) {
+    $product = Product::where('productID', $id)->get();
+    $product = $product->toArray();
+    $data = compact('product');
+    return view("ProductView")->with($data);
 });
+
 Route::get('/sale', function () {
     return view('Sale');
 });

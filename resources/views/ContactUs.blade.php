@@ -4,7 +4,7 @@
     <title>Contact Us</title>
     @endpush
     @push('css')
-    <link rel="stylesheet" href="css/ContactUs.css">
+    <link rel="stylesheet" href="css/AboutUs.css">
     <link rel="stylesheet" href="css/navbar.css">
     @endpush
 
@@ -44,4 +44,5 @@
 
         </div>
     </section>
+    <x-Foot />
     @endsection

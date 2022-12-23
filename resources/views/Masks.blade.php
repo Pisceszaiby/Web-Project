@@ -11,7 +11,7 @@
         {{-- <!-- Masks  --}}
             <section class="section-a">
        <x-Navbar />
-            <h2>Masks</h2>
+            <h2>MASKS</h2>
             <div class="container-fluid">
 
                 <div class="row ">
@@ -34,4 +34,5 @@
 
 
     </main>
+        <x-Foot />
 @endsection

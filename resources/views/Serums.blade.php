@@ -11,7 +11,7 @@
         {{-- <!-- Serums  --}}
             <section class="section-a">
        <x-Navbar />
-            <h2>Serums</h2>
+            <h2>SERUMS</h2>
             <div class="container-fluid">
 
                 <div class="row ">
@@ -28,4 +28,5 @@
 
 
     </main>
+        <x-Foot />
 @endsection

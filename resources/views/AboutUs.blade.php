@@ -97,6 +97,7 @@
             <p><b>Instagram:</b> <a href="https://www.instagram.com/whimsical_critter/"> whimsical_critter</a></p>
         </div>
         </div>
-    </section>
 
+    </section>
+    <x-Foot />
     @endsection

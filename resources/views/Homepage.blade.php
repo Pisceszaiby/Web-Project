@@ -96,4 +96,5 @@
 
 
     </main>
+        <x-Foot />
 @endsection

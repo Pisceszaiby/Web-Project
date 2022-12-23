@@ -11,7 +11,7 @@
         {{-- <!-- Scrubs  --}}
             <section class="section-a">
        <x-Navbar />
-            <h2>Scrubs</h2>
+            <h2>SCRUBS</h2>
             <div class="container-fluid">
 
                 <div class="row ">
@@ -28,4 +28,5 @@
 
 
     </main>
+        <x-Foot />
 @endsection

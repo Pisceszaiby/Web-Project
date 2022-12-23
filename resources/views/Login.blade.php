@@ -21,7 +21,7 @@
                     <div class="login-form col-lg-6 col-md-6">
 
                         <img class="logo-zash" src="{{ asset('images/zash-logo.png') }}" width="50%" alt="">
-                        <h1>Sign in as Admin</h1>
+                        <H1>SIGN IN AS ADMIN</H1>
                         <br>
                         <form action="Homepage.html">
 
@@ -49,4 +49,5 @@
 
 
     </main>
+
     @endsection

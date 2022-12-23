@@ -10,7 +10,7 @@
         {{-- <!-- Oils  --}}
             <section class="section-a">
        <x-Navbar />
-            <h2>Oils</h2>
+            <h2>OILS</h2>
             <div class="container-fluid">
 
                 <div class="row ">
@@ -33,4 +33,5 @@
 
 
     </main>
+        <x-Foot />
 @endsection

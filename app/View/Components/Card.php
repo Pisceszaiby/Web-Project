@@ -12,6 +12,7 @@ class Card extends Component
      * @return void
      */
     public $picPath;
+    public $productID;
     public $picPath2;
     public $productTitle;
     public $productPrice;
@@ -20,6 +21,7 @@ class Card extends Component
 
 
     public function __construct(
+        $productID = 1,
         $picPath =
         "https://cdn.shopify.com/s/files/1/1338/0845/products/smoke-n-roses-2_800x1200.jpg?v=1669375738",
         $picPath2 =
@@ -29,6 +31,7 @@ class Card extends Component
         $discounted = "4567",
         $productCategory = "Lips"
     ) {
+        $this->productID = $productID;
         $this->picPath = $picPath;
         $this->picPath2 = $picPath2;
         $this->productTitle = $productTitle;

@@ -10,9 +10,11 @@
     @endpush
 
     @section('main-section')
-    <x-Navbar />
+
     <div class="wrapper">
-		<h1>Shopping Cart</h1>
+        <br>
+        <x-Navbar />
+		<h1>SHOPPING CART</h1>
 		<div class="project">
 			<div class="shop">
 				<div class="box">
@@ -37,4 +39,5 @@
 			</div>
 		</div>
 	</div>
+    <x-Foot />
     @endsection

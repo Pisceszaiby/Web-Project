@@ -10,7 +10,7 @@
         {{-- <!-- Brushes  --}}
             <section class="section-a">
        <x-Navbar />
-            <h2>Brushes</h2>
+            <h2>BRUSHES</h2>
             <div class="container-fluid">
 
                 <div class="row ">
@@ -33,4 +33,6 @@
 
 
     </main>
+        <x-Foot />
+
     @endsection

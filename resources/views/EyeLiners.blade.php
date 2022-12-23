@@ -12,7 +12,7 @@
         {{-- <!-- Mascaras  --}}
             <section class="section-a">
        <x-Navbar />
-            <h2>EyeLiners</h2>
+            <h2>EYELINERS</h2>
             <div class="container-fluid">
 
                 <div class="row ">
@@ -48,4 +48,5 @@
 
 
     </main>
+        <x-Foot />
 @endsection

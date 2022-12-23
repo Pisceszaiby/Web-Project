@@ -12,7 +12,7 @@
         {{-- <!-- Cleansers --}}
             <section class="section-a">
        <x-Navbar />
-            <h2>Cleansers</h2>
+            <h2>CLEANSERS</h2>
             <div class="container-fluid">
 
                 <div class="row ">
@@ -28,5 +28,6 @@
         </section>
 
     </main>
+        <x-Foot />
     @endsection
 

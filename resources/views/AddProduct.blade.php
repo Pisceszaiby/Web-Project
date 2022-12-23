@@ -11,7 +11,8 @@
     <main>
         <img width="20%" src="../images/signin.png" class="logo-zash" alt="">
         <div class="container-fluid">
-            <form action="#">
+
+            <form action="{{url('/')}}/addProduct" method="POST">
                 <div class="mb-3">
                     <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId"
                         placeholder="Product Title">
@@ -48,4 +49,6 @@
 
 
     </main>
+        <x-Foot />
+
 @endsection

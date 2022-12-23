@@ -65,4 +65,5 @@ You have control regarding our use of your personal information for direct marke
 
     </section>
 </div>
+<x-Foot />
     @endsection

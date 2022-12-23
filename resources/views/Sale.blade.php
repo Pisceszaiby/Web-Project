@@ -11,7 +11,7 @@
         {{-- <!-- Sale  --}}
             <section class="section-a">
        <x-Navbar />
-            <h2>Sale</h2>
+            <h2>SALE</h2>
             <div class="container-fluid">
 
                 <div class="row ">
@@ -31,4 +31,5 @@
 
 
     </main>
+        <x-Foot />
 @endsection

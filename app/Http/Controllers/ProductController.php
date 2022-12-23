@@ -35,17 +35,17 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
         $product = new Product;
         $product->Title = $request['title'];
-        $product->Category= $request['type'];
-        $product->SubCategory= $request['sub-cat'];
-        $product->Description= $request['desc'];
-        $product->price= $request['price'];
-        $product->Quantity= $request['quantity'];
-        $product->picPath= $request['img'];
-        $product->picPath2= $request['img2'];
-        $product->sale= $request[''];
-
+        $product->Category = $request['type'];
+        $product->SubCategory = $request['sub-cat'];
+        $product->Description = $request['desc'];
+        $product->price = $request['price'];
+        $product->Quantity = $request['quantity'];
+        $product->picPath = $request['img'];
+        #  $product->picPath2= $request['img2'];
+        #  $product->sale= $request[''];
         $product->save();
     }
 

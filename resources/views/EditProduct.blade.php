@@ -48,4 +48,5 @@
 
 
     </main>
+        <x-Foot />
     @endsection

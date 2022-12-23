@@ -7,14 +7,15 @@
     {{-- <!-- Lip Sets --}}
         <section class="section-a">
    <x-Navbar />
-        <h2>Lip Sets</h2>
+        <H2>LIP SETS</H2>
         <div class="container-fluid">
             <div class="row ">
-                @foreach ($products as $product)
-                <x-Card :picPath="$product['picPath']" :picPath2="$product['picPath2']" :productTitle="$product['Title']" :productCategory="$product['SubCategory']" :productPrice="$product['price']" :discounted="$product['discountedPrice']" />
+                @foreach ($lipSets as $lipSet)
+                <x-Card :productID="$lipSet['productID']" :picPath="$lipSet['picPath']" :picPath2="$lipSet['picPath2']"  :productTitle="$lipSet['Title']" :productCategory="$lipSet['SubCategory']" :productPrice="$lipSet['price']" :discounted="$lipSet['discountedPrice']" />
                 @endforeach
             </div>
         </div>
+        <x-Foot />
 @endsection
 
 

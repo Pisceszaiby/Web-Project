@@ -7,12 +7,13 @@
     {{-- <!-- Lip Pencils --}}
         <section class="section-a">
    <x-Navbar />
-        <h2>Lip Tints</h2>
+        <H2>LIP TINTS</H2>
         <div class="container-fluid">
             <div class="row ">
-                @foreach ($products as $product)
-                <x-Card :picPath="$product['picPath']" :picPath2="$product['picPath2']" :productTitle="$product['Title']" :productCategory="$product['SubCategory']" :productPrice="$product['price']" :discounted="$product['discountedPrice']" />
+                @foreach ($lipTints as $lipTint)
+                <x-Card :productID="$lipTint['productID']" :picPath="$lipTint['picPath']" :picPath2="$lipTint['picPath2']"  :productTitle="$lipTint['Title']" :productCategory="$lipTint['SubCategory']" :productPrice="$lipTint['price']" :discounted="$lipTint['discountedPrice']" />
                 @endforeach
             </div>
         </div>
+    <x-Foot />
 @endsection
