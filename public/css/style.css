@@ -1,0 +1,128 @@
+@font-face {
+    font-family: gothic;
+    src: url("/font/Gothic.ttf");
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: gothic;
+
+}
+
+:root {
+    --golden: #978d07;
+    --navyblue: #02061c;
+    --white: #f7f7f7;
+    --brightGolden: #c5b204;
+}
+
+
+
+.Section_top {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    animation: change 10s infinite;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+
+}
+
+.content h1 {
+
+    background: -webkit-linear-gradient(-45deg, #f7e991, #978d07, #e2e1dd, #c5b204);
+    animation: gradient 10s ease infinite;
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 20px;
+    font-size: 3.5rem;
+    letter-spacing: 0.25em;
+    line-height: 1.5;
+    font-weight: 700;
+    text-align: center;
+
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.content a {
+    background: #0D3161;
+    padding: 10px 24px;
+    text-decoration: none;
+    font-size: 22px;
+    border-radius: 20px;
+    color: #f7e991;
+    margin: 15px;
+}
+
+.content a:hover {
+    background: #204b83;
+    color: #fff;
+}
+
+@keyframes change {
+    0% {
+        background-image: url(../images/Landing9.jpg);
+    }
+
+    25% {
+        background-image: url(../images/Landing5.jpg);
+    }
+
+    50% {
+        background-image: url(../images/Landing6.jpg);
+    }
+
+    75% {
+        background-image: url(../images/Landing8.jpg);
+    }
+
+    100% {
+        background-image: url(../images/Landing9.jpg);
+    }
+}
+
+@media (max-width:700px) {
+    .content h1 {
+        font-size: 50px;
+    }
+
+    .content a {
+        background: #0D3161;
+        padding: 10px 24px;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 20px;
+        color: #f7e991;
+    }
+
+}

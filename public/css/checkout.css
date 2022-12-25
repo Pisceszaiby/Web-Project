@@ -1,0 +1,165 @@
+:root {
+    --golden: #978d07;
+    --navyblue: #02061c;
+    --white: #f7f7f7;
+    --brightGolden: #c5b204;
+}
+
+@font-face {
+    font-family: gothic;
+    src: url("/font/Gothic.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFEACA;
+    font-family: gothic;
+    background-image: url(../images/cart.png);
+
+
+}
+
+.wrapper {
+    background-color: #fff;
+    width: 500px;
+    padding: 25px;
+    margin: 25px auto 0;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.wrapper h2 {
+    background-color: #fcfcfc;
+    color: #082142;
+    font-size: 24px;
+    padding: 10px;
+    margin-bottom: 8px;
+    text-align: center;
+    border: 1px dashed #082142;
+}
+
+.wrapper h4 {
+    padding-bottom: 5px;
+    color: #082142;
+}
+
+.input_group {
+    margin-bottom: 8px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0;
+}
+
+.input_box {
+    width: 100%;
+    margin-right: 12px;
+    position: relative;
+}
+
+
+
+.input_box .name {
+    padding: 14px 10px 14px 50px;
+    width: 100%;
+    background-color: #fcfcfc;
+    border: 1px solid #0003;
+    outline: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border-radius: 3px;
+    color: #333;
+}
+
+.input_box .name:focus, .dob:focus {
+    -webkit-box-shadow: 0 0 2px 1px #FFEACA;
+    -moz-box-shadow: 0 0 2px 1px #082142;
+    box-shadow: 0 0 2px 1px #082142;
+    border: 1px solid#082142;
+}
+
+.input_box .icon {
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    color: #333;
+    background-color: #f1f1f1;
+    border-radius: 2px 0 0 2px;
+    transition: 0.3s;
+    font-size: 20px;
+    pointer-events: none;
+    border: 1px solid #00000003;
+    border-right: none;
+}
+
+.name:focus+.icon {
+    background-color: #082142;
+    color: #082142;
+    border-right: 1px solid #082142;
+    border: none;
+    transition: 1s;
+}
+
+.input_box button {
+    width: 100%;
+    background-color: #082142;
+    border: none;
+    color: #fff;
+    padding: 15px;
+    border-right: 4px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.input_box button:hover {
+    cursor: pointer;
+    background-color: #114281;
+}
+
+@media (max-width:600px) {
+    .wrapper {
+        background-color: #fff;
+        width: 90%;
+        padding: 15px;
+        margin: 50px auto 0;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+    }
+
+}
+
+/* Footer  */
+#footer {
+
+    text-align: center;
+    padding: 50px 0;
+
+
+}
+
+#footer p {
+
+    margin-top: 20px;
+
+}
+
+#footer i {
+    margin: 10px;
+    font-size: 1.5rem;
+}
+
+#footer i:hover {
+    color: var(--brightGolden);
+}

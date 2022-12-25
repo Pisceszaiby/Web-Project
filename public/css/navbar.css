@@ -1,0 +1,121 @@
+:root {
+    --golden: #978d07;
+    --navyblue: #02061c;
+    --white: #f7f7f7;
+    --brightGolden: #c5b204;
+}
+
+@font-face {
+    font-family: gothic;
+    src: url("/font/Gothic.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: gothic;
+}
+
+.cart-icon {
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--golden);
+}
+
+a:hover {
+    color: var(--golden);
+}
+
+
+/* KEY FRAMES */
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+/*
+Scroll Bar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: var(--navyblue);
+    ;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: var(--golden);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--brightGolden);
+    ;
+}
+
+/*
+NAV BAR */
+.navbar {
+    padding: 0 0 0.5rem 0;
+    color: var(--golden);
+
+}
+
+.nav-item {
+    padding: 0 10px;
+    font-size: 18px;
+    color: var(--golden);
+}
+
+.navbar-brand {
+    text-align: center;
+    background: -webkit-linear-gradient(-45deg, #f7e991, #978d07, #e2e1dd, #c5b204);
+    animation: gradient 10s ease infinite;
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bolder;
+    letter-spacing: 0.25em;
+    font-size: xx-large;
+    margin: auto;
+
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-weight: light;
+    color: var(--golden);
+}
+
+.blink-class {
+    color: var(--golden);
+    font-weight: bolder;
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}

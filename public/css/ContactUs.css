@@ -1,0 +1,110 @@
+:root {
+    --golden: #978d07;
+    --navyblue: #02061c;
+    --white: #f7f7f7;
+    --brightGolden: #c5b204;
+}
+
+@font-face {
+    font-family: gothic;
+    src: url("/font/Gothic.ttf");
+}
+
+body {
+
+    font-family: gothic;
+    color: #f7e991;
+
+
+    background-color: #0D3161;
+}
+
+.div1 {
+    margin-top: 10px;
+    width: 45%;
+    text-align: center;
+    color: #f7e991;
+    margin: auto;
+    font-size: 18px;
+    background-color: #0D3161;
+    border-radius: 15%;
+    border: #f7e991 solid 3px;
+
+}
+
+
+
+.div2 {
+    width: 35%;
+    text-align: center;
+    color: #f7e991;
+    margin: auto;
+    font-size: 18px;
+    background-color: #0D3161;
+    border-radius: 10%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: #f7e991 solid 3px;
+
+}
+
+.section1 {
+    background-image: url(../images/checkout.jpg);
+    padding: 10px 0;
+    background-size: 100% auto;
+}
+
+h1 {
+    padding: 0.8vw;
+    text-align: center;
+    font-size: 40px;
+}
+
+div {
+    padding: 30px;
+}
+
+@media (max-width:700px) {
+    .div1, .div2 {
+        width: 90%;
+        text-align: center;
+        color: #f7e991;
+        margin: auto;
+        font-size: 16px;
+        border-radius: 10%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        padding: 0.8vw;
+        text-align: center;
+        font-size: 30px;
+    }
+
+}
+
+/* Footer  */
+#footer {
+
+    text-align: center;
+    padding: 50px 0;
+
+
+}
+
+#footer p {
+
+    margin-top: 20px;
+
+}
+
+#footer i {
+    margin: 10px;
+    font-size: 1.5rem;
+}
+
+#footer i:hover {
+    color: var(--brightGolden);
+}
