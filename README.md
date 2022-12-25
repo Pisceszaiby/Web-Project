@@ -25,20 +25,15 @@ Checkout
 
 ## Getting Started
 
-Fork and clone from this repository onto your local machine
-$ git clone https://github.com/Pisceszaiby/Web-Project.git
-
-In your terminal, navigate into the cloned directory and install the required dependencies
-
-$ npm install
-Create a database titled Zash in phpMyAdmin and import the Zash(1).sql file
+Create a database titled Zash in phpMyAdmin by importing the zash.sql file
 
 Ensure that the Apache service is installed and running
 
 ## Initiate the dev server
 
-$ npm run dev
-In your local browser go to localhost:3000
+In the project folder, run the following command
+
+php artisan serve
 
 zash is ready to go!
 
@@ -59,5 +54,5 @@ Bootstrap
 PHP laravel
 MySQL + phpMyAdmin
 
-## Liscence
+## Licence
 This project is not liscensed. It is an open project developed as a semester project.
