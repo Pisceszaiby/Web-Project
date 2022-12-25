@@ -9,9 +9,19 @@
 # About ptoject
 An online e-commerce website for beauty items. Customers can view, add, update and delete products from their cart, and also submit their orders.
 
-## Live Demo
+## Website layout
 
-//link
+LAnding page
+![landing page](https://github.com/Pisceszaiby/Web-Project/blob/main/landing%20page.png)
+
+Best Sellers
+![Best sellers](https://github.com/Pisceszaiby/Web-Project/blob/main/best%20sellers.png)
+
+Cart
+![Cart](https://github.com/Pisceszaiby/Web-Project/blob/main/shopping%20cart.png)
+
+Checkout
+![checkout](https://github.com/Pisceszaiby/Web-Project/blob/main/checkout.png)
 
 ## Getting Started
 
