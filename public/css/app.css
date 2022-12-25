@@ -51,10 +51,13 @@ a:hover {
 }
 
 .section-a h5 {
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 600;
+    letter-spacing: 0.1em;
     margin: 20px;
 }
+
+
 
 
 

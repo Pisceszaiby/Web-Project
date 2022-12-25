@@ -210,7 +210,7 @@ class MakeUpProduct extends Controller
         $bestSelling = Product::where('Category', 'FACE')->orderBy("Quantity")->get();
         $bestSelling = $bestSelling->toArray();
         $Highlighters = Product::where('subCategory', 'HIGHLIGHTER')->get();
-        $Highlighter = $Highlighters->toArray();
+        $Highlighters = $Highlighters->toArray();
         $Blushs = Product::where('subCategory', 'BLUSH')->get();
         $Blushs = $Blushs->toArray();
         $Foundations = Product::where('subCategory', 'FOUNDATION')->get();

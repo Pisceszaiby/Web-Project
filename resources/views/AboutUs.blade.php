@@ -18,17 +18,17 @@
     </div>
 
     <section class="section1">
+        @foreach($infos as $info)
         <div class="div1">
-            @foreach($infos as $info)
-
             <h1 >
                 {{$info["heading"]}}
             </h1>
             <p >
                 {{$info["info"]}}
             </p>
-            @endforeach
+
         </div>
+        @endforeach
         
     </section>
 

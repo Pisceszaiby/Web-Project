@@ -20,13 +20,6 @@
 
 
                 </div>
-                <div class="row ">
-                    <x-Card/>
-
-
-
-
-                </div>
             </div>
         </section>
 

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @push('title')
-    <title>Lip Sets</title>
+    <title>Sale</title>
 @endpush
 @section('content')
 
@@ -15,11 +15,9 @@
             <div class="container-fluid">
 
                 <div class="row ">
-                    @foreach ($sales as $sale)s
+                    @foreach ($sales as $sale)
                     <x-Card :productID="$sale['productID']" :picPath="$sale['picPath']" :picPath2="$sale['picPath2']"  :productTitle="$sale['Title']" :productCategory="$sale['SubCategory']" :productPrice="$sale['price']" :discounted="$sale['discountedPrice']" />
                     @endforeach
-
-
                 </div>
 
             </div>

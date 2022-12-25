@@ -1,5 +1,6 @@
-    {{$subtotal=0;}}
-    
+    @php
+    $subtotal=0;
+   @endphp
     @extends('layouts.main2')
     @push('title')
     <title>Cart</title>
@@ -22,12 +23,14 @@
 					<h1></h1>
 					<x-cartItem img="{{$item->picPath}}" name="{{$item->Title}}" price="{{$item->price}}" quantity="{{$item->Quantity}}" productID="{{$item->productID}}"></x-cartItem>
                     {{$a=($item->price * $item->Quantity)}}
-                    {{$subtotal=$subtotal+$a }}
+                {{$subtotal=$subtotal+$a}}
             	@endforeach
 			</div>
-            {{$tax=$subtotal * 0.05}}
-            {{$shipment=5}}
-            {{$total=$subtotal + $tax + $shipment}}
+            @php
+            $tax=$subtotal * 0.05;
+            $shipment=5;
+            $total=$subtotal + $tax + $shipment;
+            @endphp
 			<div class="right-bar">
 				<x-cart subt="{{$subtotal}}" price="{{$tax}}" ship="{{$shipment}}" total="{{$total}}"></x-cart>
 			</div>

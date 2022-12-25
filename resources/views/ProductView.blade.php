@@ -43,18 +43,16 @@
                     <div class="col-lg-6">
                         <br>
                         <br>
-                        <h5>{{$product[0]["Title"]}}</h5>
+                        <h2>{{$product[0]["Title"]}}</h2>
                         <h6>{{$product[0]["Category"]}}</h6>
                         <br>
-                        <h5>${{$product[0]["price"]}}</h5>
+                        <h5>Price: ${{$product[0]["price"]}}</h5>
+                        @if($product[0]['sale']=='1')
+                        <h5>Discounted Price: ${{$product[0]["discountedPrice"]}}</h5>
+                        @endif
 
-                        <hr>
-                        <a class="prod-quantity" href=""><span>-</span></a>
-
-                        <span class="quantity">1</span>
-                        <a class="prod-quantity" href=""><span>+</span></a>
-                        <hr>
-                        <a href=" " class="product-add btn addCart ">Add to Cart</a>
+                       <hr>
+                       
                         <br>
                         <h5>Product Description</h5>
                         <h6 align="left">

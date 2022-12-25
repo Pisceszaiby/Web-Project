@@ -22,33 +22,40 @@
 <h1>ZASH</h1>
                          <H2>Sign in as Admin</H2>
                         <br>
-                        <form action="Homepage.html">
-
+                        @php
+                        if (!isset($errorStatus))
+                            $errorStatus=1;
+                        @endphp
+                        <form action="{{url('/login')}}" method='post' >
+                            @csrf
                             <div class="mb-3">
-
                                 <input type="email" class="form-control" placeholder="Email: " name="email" id="email"
                                     aria-describedby="emailHelpId">
                                 <!-- <small id="emailHelpId" class="form-text text-muted">Help text</small> -->
                             </div>
                             <div class="mb-3">
-
-                                <input type="password" class="form-control" placeholder="Password: " name="email"
-                                    id="email" placeholder="">
+                                <input type="password" class="form-control" placeholder="Password: " name="password"
+                                    id="password" placeholder="">
                             </div>
                             <button type="submit" class="product-add">Login</button>
-                            <a href="/home" class="product-add">Continue Buying!</a>
+                            <a href="/homepage" class="product-add">Continue Buying!</a>
+                            <!--@if (session('alert'))
+                                <div class="alert alert-success">
+                                    {{ session('alert') }}
+                                </div>
+                            @endif -->
+                            @if ($errorStatus==0)
+                                Incorrect Credentials, Log in Again!
+                            @endif
+
+
+
                         </form>
 
-
                     </div>
-
                 </div>
             </div>
         </section>
-
-
-
-
     </main>
 
     @endsection

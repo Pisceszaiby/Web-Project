@@ -15,7 +15,7 @@
             <a href="/addProduct" class="homepage-btn addCart btn ">Add Product</a>
             <a href="/productTable" class="homepage-btn addCart btn ">View Products</a>
             <a href="/orders" class="homepage-btn addCart btn ">View Orders</a>
-            <a href="/login" class="homepage-btn addCart btn ">Sign Out</a>
+           <!-- <a href="/login" class="homepage-btn addCart btn ">Sign Out</a> -->
         </div>
         </div> </div>
     </main>

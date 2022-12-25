@@ -18,6 +18,7 @@
                         <th class="col2" scope="col">Title</th>
                         <th class="col3 d-none d-sm-table-cell" scope="col">Type</th>
                         <th class="col4" scope="col">Price</th>
+                        
                         <th class="col5 d-none d-sm-table-cell" scope="col">Quantity</th>
                         <th class="col6" scope="col"></th>
                     </tr>
@@ -31,7 +32,12 @@
                                     alt="aaa"></a></td>
                         <td>{{$product['Title']}}</td>
                         <td class="col3 d-none d-sm-table-cell">{{$product['Category']}}</td>
+                        
+                        @if($product['sale']=='1')
+                        <td>{{$product['discountedPrice']}}</td>
+                        @else
                         <td>{{$product['price']}}</td>
+                        @endif
                         <td  class="col5 d-none d-sm-table-cell">{{$product['Quantity']}}</td>
                         <td><a href="/editProduct/{{$product['productID']}}">Edit</a>|<a href="/deleteProduct/{{$product['productID']}}">Delete</a></td>
 

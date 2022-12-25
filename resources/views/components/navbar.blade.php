@@ -1,5 +1,5 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
-           <div class="section-a"> <a data-tilt style="color:#978d07 ;" class="navbar-brand" href="/home">ZASH</a>
+           <div class="section-a"> <a data-tilt style="color:#978d07 ;" class="navbar-brand" href="/">ZASH</a>
             </div>
 <div>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -20,7 +20,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="aboutDropLink">
 
-                          <li><a class="dropdown-item" href="/aboutUs">About Us</a></li>
+                          <li><a class="dropdown-item" href="/AboutUs">About Us</a></li>
                           <li><a class="dropdown-item" href="/contactUs">Contact Us</a></li>
                           <li><a class="dropdown-item" href="/privacyPolicy">Privacy Policy</a></li>
 

@@ -6,8 +6,15 @@
         <div class="card-body ">
             <h4 class="card-title">{{$productTitle}}</h4>
         <p class="card-text ">{{$productCategory}}</p>
-            <p class="price card-text initial-price">{{$productPrice}}</p>
-            <p class="price card-text">{{$discounted}}</p>
+            
+            @if(isset($discounted))
+            <p class="price card-text initial-price">$ {{$productPrice}}</p>
+            <p class="price card-text">$ {{$discounted}}</p>
+            @else
+            <p class="price card-text">Original Price</p>
+            <p class="price card-text">$ {{$productPrice}}</p>
+            @endif
+
             <a href="{{ url('/add-to-cart', $productID) }}" class="codeBtn btn btn-primary ">Add to Cart</a>
         </div>
     </div>

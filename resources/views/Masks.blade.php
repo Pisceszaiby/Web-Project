@@ -7,7 +7,7 @@
     {{-- <!-- Lip Sticks --}}
         <section class="section-a">
    <x-Navbar />
-        <H2>LIP STICKS</H2>
+        <H2>MASKS</H2>
         <div class="container-fluid">
             <div class="row ">
                 @foreach ($products as $product)

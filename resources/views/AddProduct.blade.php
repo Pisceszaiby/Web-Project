@@ -37,10 +37,10 @@
                     <input type="text" class="form-control" name="img" id="img" aria-describedby="helpId"
                         placeholder="Product Image 1">
                 </div>
-                {{-- <div class="mb-3">
+                <div class="mb-3">
                     <input type="text" class="form-control" name="img2" id="img2" aria-describedby="helpId"
                         placeholder="Product Image 2">
-                </div> --}}
+                </div> 
                 <div class="mb-3">
 
                     <textarea class="form-control" name="desc" id="desc" rows="3"

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2022 at 08:28 PM
+-- Generation Time: Dec 25, 2022 at 01:50 PM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.0.13
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,38 +42,107 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`name`, `profession`, `email`, `instagram`, `password`, `picPath`) VALUES
-('Amna Ahmed', 'Software Engineer', 'aahmed.bese20seecs@seecs.edu.pk', '@whimsical_critter', 'amnaahmed123', 'images\\Amna.PNG'),
-('Hafsa Tariq', 'Software Engineer', 'htariq.bese20seecs@seecs.edu.pk', '@h_afsatariq', 'hafsatariq123', 'images\\hafsa.PNG'),
-('Sadia Rehman', 'Software Engineer', 'srehman.bese20seecs@seecs.edu.pk', '@burningbluephlanets', 'sadiarehman123', 'images\\sadia.jpeg'),
-('Zainab Anwaar', 'Software Engineer', 'zanwaar.bese20seecs@seecs.edu.pk', '@zainab_anwaar03', 'zainabanwaar123', 'images\\zainab.jpeg');
+('Amna Ahmed', 'Software Engineer', 'aahmed.bese20seecs@seecs.edu.pk', '@whimsical_critter', '7a6882040cdd76b8b559b9f167677270', 'images\\Amna.PNG'),
+('Hafsa Tariq', 'Software Engineer', 'htariq.bese20seecs@seecs.edu.pk', '@h_afsatariq', '5ad5591853eb0ad741f1427693b7e1e2', 'images\\hafsa.PNG'),
+('Sadia Rehman', 'Software Engineer', 'srehman.bese20seecs@seecs.edu.pk', '@burningbluephlanets', 'bb9b3a94def47e9780d1c19039f16b43', 'images\\sadia.jpeg'),
+('Zainab Anwaar', 'Software Engineer', 'zanwaar.bese20seecs@seecs.edu.pk', '@zainab_anwaar03', 'addef33525b5c7e993941b8b2737d03f', 'images\\zainab.jpeg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Table structure for table `carts`
 --
 
-CREATE TABLE `cart` (
-  `picPath` varchar(255) NOT NULL,
-  `price` float NOT NULL,
-  `Title` varchar(255) NOT NULL,
+CREATE TABLE `carts` (
   `Quantity` int(255) NOT NULL,
-  `productID` int(255) NOT NULL
+  `productID` int(255) NOT NULL,
+  `id` int(11) NOT NULL,
+  `cart_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `carts`
+--
+
+INSERT INTO `carts` (`Quantity`, `productID`, `id`, `cart_id`) VALUES
+(1, 9, 19, 1),
+(1, 15, 20, 1),
+(1, 16, 21, 1),
+(1, 21, 22, 1),
+(1, 20, 23, 1);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `checkout`
+-- Table structure for table `checkouts`
 --
 
-CREATE TABLE `checkout` (
+CREATE TABLE `checkouts` (
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `city` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `checkouts`
+--
+
+INSERT INTO `checkouts` (`firstname`, `lastname`, `email`, `address`, `city`) VALUES
+('misbah', 'noor', 'malikmisbah@gmail.com', 'h12', 'islamabad'),
+('ayesha', 'fatima', 'hello@gmail.com', 'h13', 'karachi'),
+('ayesha', 'fatima', 'hello@gmail.com', 'h13', 'karachi'),
+('ayesha', 'fatima', 'hello@gmail.com', 'h13', 'karachi'),
+('ayesha', 'fatima', 'hello@gmail.com', 'h13', 'karachi'),
+('ayesha', 'fatima', 'hello@gmail.com', 'h13', 'karachi'),
+('ayesha', 'fatima', 'hello@gmail.com', 'h13', 'karachi'),
+('ayesha', 'fatima', 'hello@gmail.com', 'h13', 'karachi'),
+('ayesha', 'fatima', 'hello@gmail.com', 'h13', 'karachi'),
+('alina', 'nasir', 'alina@gmail.com', 'g11', 'islamabad'),
+('a', 'ahmad', 'hdjd@sdhh', 'fsddg', 'tdrg'),
+('t', 't', 'tt@e', 'r', 'r'),
+('Amna', 'Ahmad', 'ahmad@gmail.com', 'h11', 'islamabad'),
+('Sadia', 'Rehman', 'sadia123@gmail.com', '59BAsk7', 'Rwp'),
+('Sadia', 'Rehman', 'sadia123@gmail.com', '59BAsk7', 'Rwp'),
+('Sadia', 'Rehman', 'sadia123@gmail.com', '59BAsk7', 'Rwp'),
+('Sadia', 'Rehman', 'sadia123@gmail.com', '59BAsk7', 'Rwp');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `informations`
+--
+
+CREATE TABLE `informations` (
+  `spec` varchar(255) NOT NULL,
+  `heading` varchar(255) NOT NULL,
+  `info` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `informations`
+--
+
+INSERT INTO `informations` (`spec`, `heading`, `info`) VALUES
+('ABOUT US', 'WHO ARE WE?', 'ZASH Beauty is launched with the intention of bringing a luxury shopping experience to Pakistan.\r\n                Consumers now have easy access to purchase international standard makeup, fragrances, skincare, and\r\n                haircare products with confidence. We guarantee that our products are 100% original as we try so source\r\n                the products directly from either the principals, distributors, or resellers of the brands.Our wide\r\n                range of products in each category make ZASH a one-stop destination for all beauty needs. We are trying\r\n                to bring good back to our Land.'),
+('ABOUT US', 'HOW TO PLACE ORDER?', ' Visit our website or visit our physical retail outlet in Centurus, Islamabad on the ground floor to find\r\n                your desired products You can place your order online and receive it in 2-5 days or place an order\r\n                online to pick it up from our retail outlet the same day if you require your desired products sooner'),
+('ABOUT US', 'WHY CHOOSE US?', 'We guarantee 100% authenticity of our products We have something for everyone . We offer excellent\r\n                customer support and our brand advisors are highly skilled in their relevant fields allowing the\r\n                customers to gain amazing insights and product knowledge making their buying experience seamless. ZASH\r\n                Beauty is here to serve YOU.'),
+('CONTACT US', 'OUR EMAIL?', 'If you have questions or comments regarding our Privacy Policy or our privacy practices, please contact\r\n                us by sending an email to ZASH@gmail.com.'),
+('CONTACT US', 'OUR FAX?', 'In regard of sending any fax we have a Data Controller of our brand, Dr.Sadia. You can contact the data\r\n                controller by writing to the address P.O.BOX E-11/1 Islamabad.'),
+('CONTACT US', 'SOCIAL MEDIA?', 'Instagram : ZASH-Beauty\r\nFacebook : ZASH-Beauty\r\nTwitter : ZASH-Beauty');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -114,9 +183,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`productID`, `picPath`, `picPath2`, `Title`, `Category`, `SubCategory`, `Description`, `price`, `discountedPrice`, `Quantity`, `sale`, `updated_at`, `created_at`) VALUES
-(1, 'http://localhost:8000/images/signin.png', NULL, 'Zainab Anwaar Fav', 'LIPS', 'LIPSTICK', 'Hello', 19, 14, 10, NULL, '2022-12-23 14:26:50', '2022-12-23 18:38:01'),
-(2, 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dw68351a2e/assets/Y0172009/Y0172009_C017500999_E01_GHC.jpg?sw=460&sh=498&sm=fit&imwidth=460', 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dw8ad05b3f/assets/Y0172009/Y0172009_E02_ZHC.jpg?imWidth=3000', 'RUBY RED', 'LIPS', 'LIPSTICK', 'Refillable lipstick with 4 couture finishes: satin, matte, metallic & new velvet', 20, NULL, 5, 0, '2022-12-23 18:38:01', '2022-12-23 18:38:01'),
-(3, 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dw68430f70/assets/Y0996177/Y0996177_C317500999_E01_GHC.jpg?sw=715&sh=773&sm=fit&imwidth=800', 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dw6cb0d317/assets/Y0996177/Y0996177_C317500999_E05_ZHC.jpg?imWidth=3000', 'ROGUE RED REFILL', 'LIPS', 'LIPSTICK', 'True floral lip care enriched with red peony and pomegranate flower exacts of natural origin. ', 23, NULL, 5, 0, '2022-12-23 18:38:01', '2022-12-23 18:38:01'),
+(2, 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dw68351a2e/assets/Y0172009/Y0172009_C017500999_E01_GHC.jpg?sw=460&sh=498&sm=fit&imwidth=460', 'http://127.0.0.1:8000/images/signin.png', 'RUBY RED', 'LIPS', 'LIPSTICK', 'ruby', 20, NULL, 5, NULL, '2022-12-25 05:08:50', '2022-12-23 18:38:01'),
+(3, 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dw68430f70/assets/Y0996177/Y0996177_C317500999_E01_GHC.jpg?sw=715&sh=773&sm=fit&imwidth=800', 'http://127.0.0.1:8000/images/signin.png', 'ROGUE RED REFILL', 'LIPS', 'LIPSTICK', 'ruby', 23, NULL, 5, NULL, '2022-12-25 05:11:16', '2022-12-23 18:38:01'),
 (4, 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dwcd8d1ab0/assets/Y0996265/Y0996265_C025400999_E01_GHC.jpg?sw=715&sh=773&sm=fit&imwidth=800', 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dw7f4bf090/assets/Y0996265/Y0996265_C025400999_E02_ZHC.jpg?imWidth=3000', 'ROGUE TINT', 'LIPS', 'LIPTINT', 'Transfer-proof liquid lipstick - ultra-pigmented matte - weightless comfort', 15, 10, 8, 1, '2022-12-23 18:38:01', '2022-12-23 18:38:01'),
 (5, 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dwa54a1601/assets/Y0232001/Y0232001_C023200100_E01_GHC.jpg?sw=715&sh=773&sm=fit&imwidth=800', 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dw97a0e06d/assets/Y0232001/Y0232001_C023200100_E03_ZHC.jpg', 'SATIN FINISH', 'LIPS', 'LIPTINT', 'Colored lip balm - 95%* natural-origin ingredients - floral lip care - couture color - refillable', 12, NULL, 5, 0, '2022-12-23 18:38:01', '2022-12-23 18:38:01'),
 (6, 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dwcc5c888c/assets/Y3232001/Y3232001_C323200100_E01_ZHC.jpg?imWidth=3000', 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dwf6c90f30/assets/Y3232001/Y3232001_C323200100_E05_ZHC.jpg?imWidth=3000', 'VERMILION FLORAL', 'LIPS', 'LIPTINT', 'Lip balm is composed of 95%* natural-origin ingredients and is concentrated in floral extracts of red peony, Barbary fig blossom, hibiscus flower and pomegranate flower', 12, NULL, 5, 0, '2022-12-23 18:38:01', '2022-12-23 18:38:01'),
@@ -178,31 +246,25 @@ INSERT INTO `product` (`productID`, `picPath`, `picPath2`, `Title`, `Category`, 
 (62, 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dw012b4acf/assets/Y0996704/Y0996704_C099670446_E01_GHC.jpg?sw=715&sh=773&sm=fit&imwidth=800', 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dw7a92ab0e/assets/Y0996731/Y0996731_C099670186_E01_GHC.jpg?sw=460&sh=498&sm=fit&imwidth=460', 'PRESTIGE LUMIERE', 'BODY', 'SCRUBS', 'Dior Prestige Light-in-White offers a new preventive* approach to help diminish the appearance of dark spots and the yellowing of skin, all year round.\r\n\r\nThe Dior Prestige Light-in-White brightening lotion combines the freshness of an essence and the comfort of an oil. On the surface, its soft peeling action gently eliminates dead skin cells to reveal a radiantly glowing complexion. It boosts hydrolipidic flows, to help prevent the emergence of new dark spots and the premature yellowing of skin every day.\r\nA rare alchemy for an outstanding action on the youthful beauty and glow of Asian skin, even the most fragile.', 40, 32, 20, 1, '2022-12-23 18:38:01', '2022-12-23 18:38:01'),
 (63, 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dwc339063b/assets/Y1996003/Y1996003_C099600310_E01_GHC.jpg?sw=460&sh=498&sm=fit&imwidth=460', 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dw38400abe/assets/Y1996003/Y1996003_E02_ZHC.jpg?imWidth=3000', 'ROSE ESSENTIAL OIL', 'BODY', 'OILS', 'The 1st* Zash Prestige micro-nutritive lotion is enriched with minerals and Rose de Granville oil for a sensation of intensely purified skin and lasting comfort. Brimming with micro-nutrients, skin is hydrated for 24 hours,** infinitely pure and fresh. La Micro-Lotion de Rose is the first step before La Micro-Huile de Rose for deeply balanced skin that seems as if clarified; perfectly prepared for the rest of this exceptional ritual.\r\n\r\n* At Zash.\r\n** Instrumental test on 11 volunteers.\r\n*** Amount calculated based on the ISO 16128-1 and ISO 16128-2 standard. Water percentage included. The remaining 8% of ingredients contribute to the formula’s performance, sensory appeal and stability.', 45, 39, 20, 1, '2022-12-23 18:38:01', '2022-12-23 18:38:01'),
 (64, 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dw339f2756/assets/Y0900161/Y0900161_C099600161_E01_GHC.jpg?sw=460&sh=498&sm=fit&imwidth=460', 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dwc105378e/assets/Y0996429/Y0996429_C099600429_E01_GHC.jpg?sw=460&sh=498&sm=fit&imwidth=460', 'CAPTURE YOUTH', 'BODY', 'OILS', 'The New Skin Effect Enzyme Solution lotion for face is the first step in the youth regimen. It helps eliminate dead skin cells and diminishes surface imperfections. The effectiveness of the subsequently applied Capture Youth serum* is boosted.\r\n\r\n*Clinical results measured by dermatologist, Lotion + Plump Filler vs. Plump Filler alone, 32 women, after initial application and at 1 month.', 35, NULL, 20, 0, '2022-12-23 18:38:01', '2022-12-23 18:38:01'),
-(65, 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dw22427f32/assets/Y0996345/Y0996345_C099600345_E01_GHC.jpg?sw=715&sh=773&sm=fit&imwidth=800', 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dw339f2756/assets/Y0900161/Y0900161_C099600161_E01_GHC.jpg?sw=460&sh=498&sm=fit&imwidth=460', 'SORBET MIST', 'BODY', 'OILS', 'The Sorbet Mist encourages cutaneous hydration and energizes the skin while promoting long-lasting makeup hold and reviving its radiance.', 30, NULL, 20, 0, '2022-12-23 18:38:01', '2022-12-23 18:38:01');
+(65, 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dw22427f32/assets/Y0996345/Y0996345_C099600345_E01_GHC.jpg?sw=715&sh=773&sm=fit&imwidth=800', 'https://eco-beauty.dior.com/dw/image/v2/BDGF_PRD/on/demandware.static/-/Sites-master_dior/default/dw339f2756/assets/Y0900161/Y0900161_C099600161_E01_GHC.jpg?sw=460&sh=498&sm=fit&imwidth=460', 'SORBET MIST', 'BODY', 'OILS', 'The Sorbet Mist encourages cutaneous hydration and energizes the skin while promoting long-lasting makeup hold and reviving its radiance.', 30, NULL, 20, 0, '2022-12-23 18:38:01', '2022-12-23 18:38:01'),
+(69, 'http://127.0.0.1:8000/images/signin.png', 'http://127.0.0.1:8000/images/signin.png', 'MEDORA', 'LIPS', 'LIPSTICK', 'QWERTY', 40, NULL, 20, NULL, '2022-12-25 06:24:56', '2022-12-25 06:24:56');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `us`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `us` (
-  `spec` varchar(255) NOT NULL,
-  `heading` varchar(255) NOT NULL,
-  `info` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `us`
---
-
-INSERT INTO `us` (`spec`, `heading`, `info`) VALUES
-('ABOUT US', 'WHO ARE WE?', 'ZASH Beauty is launched with the intention of bringing a luxury shopping experience to Pakistan.\r\n                Consumers now have easy access to purchase international standard makeup, fragrances, skincare, and\r\n                haircare products with confidence. We guarantee that our products are 100% original as we try so source\r\n                the products directly from either the principals, distributors, or resellers of the brands.Our wide\r\n                range of products in each category make ZASH a one-stop destination for all beauty needs. We are trying\r\n                to bring good back to our Land.'),
-('ABOUT US', 'HOW TO PLACE ORDER?', ' Visit our website or visit our physical retail outlet in Centurus, Islamabad on the ground floor to find\r\n                your desired products You can place your order online and receive it in 2-5 days or place an order\r\n                online to pick it up from our retail outlet the same day if you require your desired products sooner'),
-('ABOUT US', 'WHY CHOOSE US?', 'We guarantee 100% authenticity of our products We have something for everyone . We offer excellent\r\n                customer support and our brand advisors are highly skilled in their relevant fields allowing the\r\n                customers to gain amazing insights and product knowledge making their buying experience seamless. ZASH\r\n                Beauty is here to serve YOU.'),
-('CONTACT US', 'OUR EMAIL?', 'If you have questions or comments regarding our Privacy Policy or our privacy practices, please contact\r\n                us by sending an email to ZASH@gmail.com.'),
-('CONTACT US', 'OUR FAX?', 'In regard of sending any fax we have a Data Controller of our brand, Dr.Sadia. You can contact the data\r\n                controller by writing to the address P.O.BOX E-11/1 Islamabad.'),
-('CONTACT US', 'SOCIAL MEDIA?', 'Instagram : ZASH-Beauty\r\nFacebook : ZASH-Beauty\r\nTwitter : ZASH-Beauty');
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Indexes for dumped tables
@@ -212,7 +274,19 @@ INSERT INTO `us` (`spec`, `heading`, `info`) VALUES
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`name`);
+  ADD PRIMARY KEY (`email`);
+
+--
+-- Indexes for table `carts`
+--
+ALTER TABLE `carts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `orders`
@@ -227,14 +301,38 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`productID`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `carts`
+--
+ALTER TABLE `carts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `productID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `productID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

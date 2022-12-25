@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\MakeUpProduct;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminOrderController;
+use App\Http\Controllers\SignInController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\CartController;
@@ -24,7 +26,9 @@ Route::get('/cart', [CartController::class, 'show']);
 Route::get('/add-to-cart/{productID}', [CartController::class, 'AddToCart']);
 Route::get('/update-cart', [CartController::class, 'UpdateCart']);
 
-
+//checkout
+Route::post('checkout',  [CheckoutController::class, 'getData']);
+Route::view('/checkout',"checkout");
 
 Route::get('/', function () {
     return view('index');
@@ -32,24 +36,18 @@ Route::get('/', function () {
 
 Route::get('/homepage', [MakeUpProduct::class, 'homepage']);
 
-
+Route::get('/addProduct', function () {
+    return view('AddProduct');
+});
 Route::get('/addProduct', function () {
     return view('AddProduct');
 });
 Route::get('/adminHomePage', function () {
     return view('AdminHomePage');
 });
-Route::get('/blush', function () {
-    return view('Blush');
-});
 Route::get('/body', function () {
     return view('Body');
 });
-Route::get('/brushes', function () {
-    return view('Brushes');
-});
-
-
 
 Route::get('/confirmation', function () {
     return view('confirmation');
@@ -57,9 +55,7 @@ Route::get('/confirmation', function () {
 Route::get('/cleansers', function () {
     return view('Cleansers');
 });
-Route::get('/concealer', function () {
-    return view('Concealer');
-});
+
 Route::get('/editProduct', function () {
     return view('EditProduct');
 });
@@ -67,28 +63,21 @@ Route::get('/eyeliner', function () {
     return view('EyeLiners');
 });
 
+//Aboutus and ContactUs routes
 Route::get('/AboutUs', [InformationController::class, 'aboutus']);
 Route::get('/contactUs', [InformationController::class, 'contactus']);
+//sale routes 
 Route::get('/Sale', [MakeUpProduct::class, 'sale']);
 
+//Eyes routes
+Route::get('/eyes',  [MakeUpProduct::class, 'eyes']);
 Route::get('/eyeshadows', [MakeUpProduct::class, 'eyeshadow']);
 Route::get('/eyeliner', [MakeUpProduct::class, 'eyeliner']);
 Route::get('/mascara',  [MakeUpProduct::class, 'mascara']);
-Route::get('/eyes',  [MakeUpProduct::class, 'eyes']);
 
-Route::get('/foundation', function () {
-    return view('Foundation');
-});
-Route::get('/highlighter', function () {
-    return view('Highlighters');
-});
+
 
 Route::get('/productTable', [MakeUpProduct::class, 'productTable']);
-Route::get('/lipSets', [MakeUpProduct::class, 'lipSets']);
-Route::get('/lips', [MakeUpProduct::class, 'lips']);
-Route::get('/lipSticks', [MakeUpProduct::class, 'lipSticks']);
-Route::get('/lipPencils', [MakeUpProduct::class, 'lipPencils']);
-Route::get('/lipTints', [MakeUpProduct::class, 'lipTints']);
 Route::post('/addProduct', [ProductController::class, 'store']);
 Route::post('/editProduct/{productId}', [ProductController::class, 'update']);
 Route::get('/deleteProduct/{productId}', [ProductController::class, 'delete'])->name('product.delete');
@@ -96,9 +85,30 @@ Route::get('/editProduct/{productId}', [ProductController::class, 'edit'])->name
 Route::get('/update/{productId}', [ProductController::class, 'update'])->name('product.update');
 Route::get('/ProductView', [ProductController::class, 'show']);
 
+//lips route
+Route::get('/lipSets', [MakeUpProduct::class, 'lipSets']);
+Route::get('/lips', [MakeUpProduct::class, 'lips']);
+Route::get('/lipSticks', [MakeUpProduct::class, 'lipSticks']);
+Route::get('/lipPencils', [MakeUpProduct::class, 'lipPencils']);
+Route::get('/lipTints', [MakeUpProduct::class, 'lipTints']);
+
+
+
 
 Route::get('/login', function () {
-    return view('Login');
+
+    if (isset($errorStatus)) {
+
+        return view("Login")->with($errorStatus);
+    }
+   return view('Login');
+});
+
+Route::post('/login', [SignInController::class, 'signin']);
+
+
+Route::get('/adminHomePage', function () {
+ return view('AdminHomePage');
 });
 Route::get('/lotions', function () {
     return view('Lotions');
@@ -108,14 +118,11 @@ Route::get('/oils', function () {
     return view('Oils');
 });
 
-
-//to be implemented
-// Route::get('/orders', [MakeUpProduct::class, 'orders']);
-
 //for now
 Route::get('/orders', function () {
     return view('OrdersTable');
 });
+Route::get('/orders', [AdminOrderController::class, 'orderTable']); 
 Route::get('/privacyPolicy', function () {
     return view('PrivacyPolicy');
 });
@@ -138,24 +145,24 @@ Route::get('/masks', function () {
     return view('Masks');
 });
 
+//skincare routes
 Route::get('/masks', [MakeUpProduct::class, 'mask']);
 Route::get('/serums', [MakeUpProduct::class, 'serum']);
 Route::get('/cleansers', [MakeUpProduct::class, 'cleanser']);
 Route::get('/skincare',  [MakeUpProduct::class, 'skincare']);
 
-Route::get('/highlighters',  [MakeUpProduct::class, 'highlighter']);
-Route::get('/concealers',  [MakeUpProduct::class, 'concealer']);
+//face routes
+Route::get('/highlighter',  [MakeUpProduct::class, 'highlighter']);
+Route::get('/concealer',  [MakeUpProduct::class, 'concealer']);
 Route::get('/brushes',  [MakeUpProduct::class, 'brush']);
-Route::get('/blushes',  [MakeUpProduct::class, 'blush']);
-Route::get('/foundations',  [MakeUpProduct::class, 'foundation']);
+Route::get('/blush',  [MakeUpProduct::class, 'blush']);
+Route::get('/foundation',  [MakeUpProduct::class, 'foundation']);
 Route::get('/face',  [MakeUpProduct::class, 'face']);
 
+//body routes
 Route::get('/lotions',  [MakeUpProduct::class, 'lotion']);
 Route::get('/oils',  [MakeUpProduct::class, 'oil']);
 Route::get('/scrubs',  [MakeUpProduct::class, 'scrub']);
 Route::get('/body',  [MakeUpProduct::class, 'body']);
 
 
-
-Route::post('checkout',  [CheckoutController::class, 'getData']);
-Route::view('/checkout',"checkout");

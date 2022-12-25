@@ -29,6 +29,17 @@
                     <input type="text" class="form-control" name="price" value="{{$product->price}}" id="price" aria-describedby="helpId"
                         placeholder="Product Price">
                 </div>
+                @if($product->sale=='1')
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="sale" value="{{$product->sale}}" id="sale" aria-describedby="helpId"
+                        placeholder="On Sale">
+                </div>
+            
+                    <div class="mb-3">
+                    <input type="text" class="form-control" name="discount" value="{{$product->discountedPrice}}" id="discount" aria-describedby="helpId"
+                        placeholder="Discounted Price">
+                </div>
+                @endif
                 {{-- <div class="mb-3">
                     <input type="text" class="form-control" name="img2" id="img2" aria-describedby="helpId"
                         placeholder="Product Image 2">
@@ -39,6 +50,10 @@
                 </div>
                 <div class="mb-3">
                     <input type="text" class="form-control" name="img" value="{{$product->picPath}}" id="img" aria-describedby="helpId"
+                        placeholder="Product Image">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="img2" value="{{$product->picPath2}}" id="img2" aria-describedby="helpId"
                         placeholder="Product Image">
                 </div>
                 <div class="mb-3">

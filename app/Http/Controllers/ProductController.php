@@ -35,6 +35,20 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            [
+                'title' => 'required ',
+                //is required
+                'type' => 'required',
+                'sub-cat' => 'required',
+                'desc' => 'required',
+                'price' => 'required',
+                'quantity' => 'required',
+                'img' => 'required',
+                'img2' => 'required',
+
+            ]
+        );
 
         $product = new Product;
         $product->Title = $request['title'];
@@ -73,7 +87,6 @@ class ProductController extends Controller
         if (is_null($product)) {
             //product not found
             return redirect('/');
-            //redirected to producttable page
         } else {
             $title = "Update Product";
             $url = url('/product/update') . "/" . $id;
@@ -91,6 +104,21 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate(
+            [
+                'title' => 'required ',
+                //is required and must be a type of email
+                'type' => 'required',
+                'sub-cat' => 'required',
+                'desc' => 'required',
+                'price' => 'required',
+                'quantity' => 'required',
+                'img' => 'required',
+                'img2' => 'required',
+                //   'sale' => 'required',
+            ]
+        );
+
         $product = Product::find($id);
 
         $product->Title = $request['title'];
