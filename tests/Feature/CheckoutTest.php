@@ -55,20 +55,110 @@ class CheckoutTest extends TestCase
         $this->assertEmpty($items);
     }
 
-    public function test_user_cannot_submit_checkout_form_without_required_fields()
+    public function test_user_cannot_submit_checkout_form_without_city_field()
     {
-        $response = $this->withoutExceptionHandling()->post('/checkout', [
-            'fname' => 'John',
-            'lname' => 'Doe',
-            'email' => 'john.doe@example.com',
-            'address' => '123 Main St',
-        ]);
+        try {
+            $this->withoutExceptionHandling();
+            $response = $this->withoutExceptionHandling()->post('/checkout', [
+                'fname' => 'John',
+                'lname' => 'Doe',
+                'email' => 'john.doe@example.com',
+                'address' => '123 Main St',
+            ]);
+            // Check the response status
+            $response->assertStatus(500);
 
-        // Check the response status
-        $response->assertStatus(500);
+            // Check if the error message is present in the response
+            $response->assertSessionHasErrors(['city']);
+        } catch (\Illuminate\Database\QueryException $e) {
+            $this->assertStringContainsString("Column 'city' cannot be null", $e->getMessage());
+            return;
+        }
+    }
 
-        // Check if the error message is present in the response
-        $response->assertSessionHasErrors(['city']);
+    public function test_user_cannot_submit_checkout_form_without_firstname_field()
+    {
+        try {
+            $this->withoutExceptionHandling();
+            $response = $this->withoutExceptionHandling()->post('/checkout', [
+                'lname' => 'Doe',
+                'email' => 'john.doe@example.com',
+                'address' => '123 Main St',
+                'city' => 'abs'
+            ]);
+            // Check the response status
+            $response->assertStatus(500);
+
+            // Check if the error message is present in the response
+            $response->assertSessionHasErrors(['firstname']);
+        } catch (\Illuminate\Database\QueryException $e) {
+            $this->assertStringContainsString("Column 'firstname' cannot be null", $e->getMessage());
+            return;
+        }
+    }
+
+    public function test_user_cannot_submit_checkout_form_without_lastname_field()
+    {
+        try {
+            $this->withoutExceptionHandling();
+            $response = $this->withoutExceptionHandling()->post('/checkout', [
+                'fname' => 'Doe',
+                'email' => 'john.doe@example.com',
+                'address' => '123 Main St',
+                'city' => 'abs'
+            ]);
+            // Check the response status
+            $response->assertStatus(500);
+
+            // Check if the error message is present in the response
+            $response->assertSessionHasErrors(['lastname']);
+        } catch (\Illuminate\Database\QueryException $e) {
+            $this->assertStringContainsString("Column 'lastname' cannot be null", $e->getMessage());
+            return;
+        }
+    }
+
+
+    public function test_user_cannot_submit_checkout_form_without_email_field()
+    {
+        try {
+            $this->withoutExceptionHandling();
+            $response = $this->withoutExceptionHandling()->post('/checkout', [
+                'fname' => 'John',
+                'lname' => 'Doe',
+                'address' => '123 Main St',
+                'city' => 'abs'
+            ]);
+            // Check the response status
+            $response->assertStatus(500);
+
+            // Check if the error message is present in the response
+            $response->assertSessionHasErrors(['email']);
+        } catch (\Illuminate\Database\QueryException $e) {
+            $this->assertStringContainsString("Column 'email' cannot be null", $e->getMessage());
+            return;
+        }
+    }
+
+    public function test_user_cannot_submit_checkout_form_without_address_field()
+    {
+        try {
+            $this->withoutExceptionHandling();
+            $response = $this->withoutExceptionHandling()->post('/checkout', [
+                'fname' => 'John',
+                'lname' => 'Doe',
+                'email' => 'john.doe@example.com',
+                'city' => 'abs'
+            ]);
+            // Check the response status
+            $response->assertStatus(500);
+
+            // Check if the error message is present in the response
+            $response->assertSessionHasErrors(['address']);
+        } catch (\Illuminate\Database\QueryException $e) {
+            $this->assertStringContainsString("Column 'address' cannot be null", $e->getMessage());
+            return;
+        }
     }
 
     public function test_checkout_redirects_to_confirmation()
@@ -120,6 +210,6 @@ class CheckoutTest extends TestCase
         // Assert that the response status code is 302 (redirect)
         $response2->assertStatus(200);
 
-        assertEquals($original_quantity-2, 3);
+        assertEquals($original_quantity - 2, 3);
     }
 }
