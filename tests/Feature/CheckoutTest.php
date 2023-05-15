@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Product;
 use App\Models\Cart;
 
+use function PHPUnit\Framework\assertEquals;
 
 class CheckoutTest extends TestCase
 {
@@ -86,4 +87,39 @@ class CheckoutTest extends TestCase
         $response->assertSee('Thank you');
     }
 
+    public function test_product_inventory_reduced_after_checkout()
+    {
+        $original_product = DB::table('product')
+            ->select('quantity')
+            ->where('productID', 2)
+            ->first();
+
+        $original_quantity = $original_product->quantity;
+
+        $product = new Cart();
+        $product->productID = 2;
+        $product->cart_id = 1;
+        $product->Quantity = 2;
+        $product->save();
+
+        // Submit the form
+        $response = $this->get("/update-cart?productID={$product->productID}&quantity={$product->Quantity}");
+
+        // Check the response status
+        $response->assertStatus(302);
+
+
+        $response2 = $this->post('/checkout', [
+            'fname' => 'John',
+            'lname' => 'Doe',
+            'email' => 'john.doe@example.com',
+            'address' => '123 Main St',
+            'city' => 'Anytown',
+        ]);
+
+        // Assert that the response status code is 302 (redirect)
+        $response2->assertStatus(200);
+
+        assertEquals($original_quantity-2, 3);
+    }
 }
