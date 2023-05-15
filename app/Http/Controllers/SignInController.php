@@ -31,7 +31,6 @@ class SignInController extends Controller
         foreach ($admins as $admin){
         //echo ($admin->email);
             $password=$request['password'];
-            print($password);
             if (($admin['email']== $request['email']) && ($admin['password']== $password) ){
                 return redirect('/adminHomePage');
             } 
