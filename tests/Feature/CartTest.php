@@ -34,6 +34,13 @@ class CartTest extends TestCase
         $this->assertNotNull($item);
     }
 
+    public function test_add_nonexistant_product_to_cart()
+    {
+        $productId = 1000;
+        $response = $this->get("/add-to-cart/{$productId}");
+        $response->assertSessionHasErrors();
+    }
+
     public function test_cart_change_quantity_of_product_in_cart()
     {
         $product = new Cart();
@@ -96,19 +103,5 @@ class CartTest extends TestCase
 
         $response->assertSessionMissing('cart');
         $response->assertSessionHasErrors(['quantity']);
-    }
-
-    public function test_cart_add_non_existant_product()
-    {
-        $product = new Cart();
-        $product->productID = 256;
-        $product->cart_id = 1;
-        $product->Quantity = 20;
-        $product->save();
-
-        // Submit the form
-        $response = $this->get("/update-cart?productID={$product->productID}&quantity={$product->Quantity}");
-
-        $response->assertSessionMissing('cart');
     }
 }

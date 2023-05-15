@@ -9,11 +9,13 @@ use App\Models\Admin;
 
 class LoginTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
+    public function test_cart_url_status_ok()
+    {
+        $response = $this->get('/login');
+
+        $response->assertStatus(200);
+    }
+
     public function test_admin_is_able_to_login()
     {
         $response = $this->post('/login', [
@@ -51,6 +53,31 @@ class LoginTest extends TestCase
             'email' => 'zanwaar',
             'password' => '1234898',
         ]);
+
+        $response->assertSessionHasErrors();
+    }
+
+    public function test_admin_cannot_log_in_with_empty_email()
+    {
+        $response = $this->post('/login', [
+            'password' => '1234898',
+        ]);
+
+        $response->assertSessionHasErrors();
+    }
+
+    public function test_admin_cannot_log_in_with_empty_password()
+    {
+        $response = $this->post('/login', [
+            'email' => 'zanwaar',
+        ]);
+
+        $response->assertSessionHasErrors();
+    }
+
+    public function test_admin_cannot_log_in_with_empty_email_and_password()
+    {
+        $response = $this->post('/login', []);
 
         $response->assertSessionHasErrors();
     }

@@ -55,6 +55,20 @@ class CheckoutTest extends TestCase
         $this->assertEmpty($items);
     }
 
+    public function test_user_cannot_submit_checkout_with_invalid_email()
+    {
+        $response = $this->post('/checkout', [
+            'fname' => 'John',
+            'lname' => 'Doe',
+            'city'  => "abc",
+            'email' => 'john.doe',
+            'address' => '123 Main St',
+        ]);
+        $response->assertStatus(500);
+        // Check if the error message is present in the response
+        $response->assertSessionHasErrors(['email']);
+    }
+
     public function test_user_cannot_submit_checkout_form_without_city_field()
     {
         try {
