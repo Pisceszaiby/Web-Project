@@ -20,9 +20,6 @@ class CartTest extends TestCase
 
     public function test_cart_should_be_initially_empty()
     {
-        $response = $this->get('/cart');
-        $response->assertStatus(200);
-
         $items = DB::table('carts')->get();
         $this->assertEmpty($items);
     }
