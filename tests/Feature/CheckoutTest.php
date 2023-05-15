@@ -35,7 +35,7 @@ class CheckoutTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_cart_empty_after_checkout()
+    public function test_cart_is_empty_after_checkout()
     {
         $response = $this->post('/checkout', [
             'fname' => 'John',
@@ -55,7 +55,7 @@ class CheckoutTest extends TestCase
         $this->assertEmpty($items);
     }
 
-    public function test_user_cannot_submit_checkout_with_invalid_email()
+    public function test_user_cannot_submit_checkout_form_with_invalid_email()
     {
         $response = $this->post('/checkout', [
             'fname' => 'John',

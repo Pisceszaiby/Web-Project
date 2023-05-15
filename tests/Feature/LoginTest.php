@@ -9,7 +9,7 @@ use App\Models\Admin;
 
 class LoginTest extends TestCase
 {
-    public function test_cart_url_status_ok()
+    public function test_login_url_status_ok()
     {
         $response = $this->get('/login');
 
@@ -27,7 +27,7 @@ class LoginTest extends TestCase
         $response->assertRedirect('/adminHomePage');
     }
 
-    public function test_admin_cannot_log_in_with_invalid_email()
+    public function test_admin_cannot_login_with_invalid_email()
     {
         $response = $this->post('/login', [
             'email' => 'zanwaar',
@@ -37,7 +37,7 @@ class LoginTest extends TestCase
         $response->assertSessionHasErrors();
     }
 
-    public function test_admin_cannot_log_in_with_invalid_password()
+    public function test_admin_cannot_login_with_invalid_password()
     {
         $response = $this->post('/login', [
             'email' => 'zanwaar.bese20seecs@seecs.edu.pk',
@@ -47,7 +47,7 @@ class LoginTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_admin_cannot_log_in_with_invalid_username_and_password()
+    public function test_admin_cannot_login_with_invalid_username_and_password()
     {
         $response = $this->post('/login', [
             'email' => 'zanwaar',
@@ -57,7 +57,7 @@ class LoginTest extends TestCase
         $response->assertSessionHasErrors();
     }
 
-    public function test_admin_cannot_log_in_with_empty_email()
+    public function test_admin_cannot_login_with_empty_email()
     {
         $response = $this->post('/login', [
             'password' => '1234898',
@@ -66,7 +66,7 @@ class LoginTest extends TestCase
         $response->assertSessionHasErrors();
     }
 
-    public function test_admin_cannot_log_in_with_empty_password()
+    public function test_admin_cannot_login_with_empty_password()
     {
         $response = $this->post('/login', [
             'email' => 'zanwaar',
@@ -75,7 +75,7 @@ class LoginTest extends TestCase
         $response->assertSessionHasErrors();
     }
 
-    public function test_admin_cannot_log_in_with_empty_email_and_password()
+    public function test_admin_cannot_login_with_empty_email_and_password()
     {
         $response = $this->post('/login', []);
 

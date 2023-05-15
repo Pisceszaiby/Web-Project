@@ -41,7 +41,7 @@ class CartTest extends TestCase
         $response->assertSessionHasErrors();
     }
 
-    public function test_cart_change_quantity_of_product_in_cart()
+    public function test_change_quantity_of_product_in_cart()
     {
         $product = new Cart();
         $product->productID = 1;
