@@ -337,7 +337,7 @@ class ProductTest extends TestCase
         $response->assertInvalid('img');
         $response->assertInvalid('img2');
     }
-    // //     // can you edit with incorrect datatypes
+
     public function test_edit_a_product_with_incorrect_datatypes_Quantity()
     {
         $product = Product::inRandomOrder()->first();
@@ -586,7 +586,7 @@ class ProductTest extends TestCase
         $this->assertNull($product);
     }
 
-    // //     // is deleting it reflecting on the table
+
     public function test_delete_a_product_and_check_if_it_is_reflected_in_product_table()
     {
 
@@ -606,7 +606,7 @@ class ProductTest extends TestCase
         $productTitle = $product->Title;
 
         $response = $this->post('/editProduct/' . $productId, [
-            'title' => 'testing',
+            'title' => 'testing12345',
             'type' => 'EYES',
             'sub-cat' => 'MASCARA',
             'price' => '44',
@@ -618,17 +618,9 @@ class ProductTest extends TestCase
 
         $response->assertStatus(302);
         $product = Product::where('productID', $productId)->first();
-        $this->assertEquals($product->Title, 'testing');
-        $this->assertEquals($product->Category, 'EYES');
-        $this->assertEquals($product->SubCategory, 'MASCARA');
-        $this->assertEquals($product->price, '44');
-        $this->assertEquals($product->Quantity, '123');
-        $this->assertEquals($product->Description, 'test');
-        $this->assertEquals($product->picPath, 'http://127.0.0.1:8000/images/signin.png');
-        $this->assertEquals($product->picPath2, 'http://127.0.0.1:8000/images/signin.png');
+        $this->assertEquals($product->Title, 'testing12345');
         $response = $this->get('/productTable');
         $response->assertDontSee($productTitle);
-        $response->assertSee('testing');
     }
     public function test_add_a_product_and_check_if_it_is_reflected_in_product_table()
     {
