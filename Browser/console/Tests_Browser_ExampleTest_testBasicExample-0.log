@@ -1,0 +1,8 @@
+[
+    {
+        "level": "SEVERE",
+        "message": "http:\/\/localhost\/dashboard\/javascripts\/all.js 5495:0 Uncaught SyntaxError: Unexpected token '}'",
+        "source": "javascript",
+        "timestamp": 1684672321806
+    }
+]
